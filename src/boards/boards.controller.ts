@@ -7,7 +7,7 @@ import { CreateBoardDto } from './dto/create-board.dto';
 export class BoardsController {
     constructor(private boardService: BoardsService) {}
 
-    @Get()
+    @Get('/')
     getAllBoard(): Board[] {
         return this.boardService.getAllBoards();
     }
