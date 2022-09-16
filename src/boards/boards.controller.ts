@@ -28,8 +28,8 @@ export class BoardsController {
     }
 
     @Delete('/:id')
-    deleteBoard(@Param('id', ParseIntPipe) id: number): void {
-        this.boardService.deleteBoard(id);
+    deleteBoard(@Param('id', ParseIntPipe) id: number): Promise<void> {
+        return this.boardService.deleteBoard(id);
     }
 
     @Patch('/:id/status')
