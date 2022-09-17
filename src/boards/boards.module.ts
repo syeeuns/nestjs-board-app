@@ -1,3 +1,4 @@
+import { AuthModule } from './../auth/auth.module';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Board } from './board.entity';
@@ -6,7 +7,8 @@ import { BoardsService } from './boards.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Board])
+    TypeOrmModule.forFeature([Board]),
+    AuthModule
   ],
   controllers: [BoardsController],
   providers: [BoardsService]
