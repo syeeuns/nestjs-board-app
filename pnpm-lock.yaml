@@ -20,6 +20,7 @@ specifiers:
   bcryptjs: ^2.4.3
   class-transformer: ^0.5.1
   class-validator: ^0.13.2
+  config: ^3.3.8
   eslint: ^8.0.1
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
@@ -52,6 +53,7 @@ dependencies:
   bcryptjs: 2.4.3
   class-transformer: 0.5.1
   class-validator: 0.13.2
+  config: 3.3.8
   passport: 0.6.0
   passport-jwt: 4.0.0
   pg: 8.8.0
@@ -2082,6 +2084,13 @@ packages:
       readable-stream: 2.3.7
       typedarray: 0.0.6
 
+  /config/3.3.8:
+    resolution: {integrity: sha512-rFzF6VESOdp7wAXFlB9IOZI4ouL05g3A03v2eRcTHj2JBQaTNJ40zhAUl5wRbWHqLZ+uqp/7OE0BWWtAVgrong==}
+    engines: {node: '>= 10.0.0'}
+    dependencies:
+      json5: 2.2.1
+    dev: false
+
   /consola/2.15.3:
     resolution: {integrity: sha512-9vAdYbHj6x2fLKC4+oPH0kFzY/orMZyG2Aj+kNylHxKGJ/Ed4dpNyAQYwJOdqO4zdM7XpVHmyejQDcQHrnuXbw==}
 
@@ -3577,7 +3586,6 @@ packages:
     resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
     engines: {node: '>=6'}
     hasBin: true
-    dev: true
 
   /jsonc-parser/3.1.0:
     resolution: {integrity: sha512-DRf0QjnNeCUds3xTjKlQQ3DpJD51GvDjJfnxUVWg6PZTo2otSm+slzNAxU/35hF8/oJIKoG9slq30JYOsF2azg==}
