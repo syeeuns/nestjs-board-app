@@ -5,6 +5,8 @@ import { Board } from './board.entity';
 import { BoardsService } from './boards.service';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { BoardStatusValidationPipe } from './pipes/board-status-validation.pipe';
+import { GetUser } from 'src/auth/get-user.decorator';
+import { User } from 'src/auth/user.entity';
 
 @Controller('boards')
 @UseGuards(AuthGuard())
@@ -16,12 +18,18 @@ export class BoardsController {
         return this.boardService.getAllBoards();
     }
 
+    @Get('/user')
+    getUsersAllBoard(@GetUser() user: User): Promise<Board[]> {
+        return this.boardService.getUsersAllBoards(user);
+    }
+
     @Post()
     @UsePipes(ValidationPipe)
     createBoard(
-        @Body() createBoardDto: CreateBoardDto
+        @Body() createBoardDto: CreateBoardDto,
+        @GetUser() user: User
     ): Promise<Board> {
-        return this.boardService.createBoard(createBoardDto);
+        return this.boardService.createBoard(createBoardDto, user);
     }
 
     @Get('/:id')
@@ -30,8 +38,11 @@ export class BoardsController {
     }
 
     @Delete('/:id')
-    deleteBoard(@Param('id', ParseIntPipe) id: number): Promise<void> {
-        return this.boardService.deleteBoard(id);
+    deleteBoard(
+        @Param('id', ParseIntPipe) id: number,
+        @GetUser() user: User
+    ): Promise<void> {
+        return this.boardService.deleteBoard(id, user);
     }
 
     @Patch('/:id/status')
